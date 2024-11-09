@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: 'postgres:9-alpine'
+    environment:
+      - 'POSTGRES_DB=simplebank'
+      - 'POSTGRES_PASSWORD=root'
+      - 'POSTGRES_USER=root'
+    ports:
+      - '5432:5432'
+    networks:
+      - bank-network
+
+networks:
+  bank-network:
+    driver: bridge
